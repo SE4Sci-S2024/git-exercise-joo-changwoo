@@ -1,6 +1,6 @@
 # APC 523 Fall 2023 - Homework 2 - Author : Himawan Winarto
 
-This problem will explore the typical use cases of `git` as a version control tool for scientific computing. Before proceeding with this problem, make sure you have configured your local `git` configuration and GitHub account properly. Make sure that the GitHub account that you are using has been added to the [class organization](https://github.com/APC524-F2023). If this is not the case, please contact one of the TA.
+This problem will explore the typical use cases of `git` as a version control tool for scientific computing. Before proceeding with this problem, make sure you have configured your local `git` configuration and GitHub account properly. Make sure that the GitHub account that you are using has been added to the [class organization](https://github.com/SE4Sci-S2024). If this is not the case, please contact one of the TA.
 
 This assignment assume that you are using a UNIX shell, you can use the `adroit` cluster if you wish to. It is good practice to keep track of the commands that you have used as you might need to purge your solution repositories a couple of times while doing this assignment.
 
@@ -12,7 +12,7 @@ GitHub has the concept of **Fork** which creates your own repository based on so
 
 In this part, you are going to learn how to initiate and clone an isolated copy of this repository through these steps:
 
-1. Create a **private** repository in the **class organization** with the name format `git-exercise-{NETID}` such that it is accessible through `https://github.com/APC524-F2023/git-exercise-{NETID}`. This new repository will be called the **solution repository**. The original repository `https://github.com/APC524-F2023/git-exercise` will be called the **assignment repository**.
+1. Create a **private** repository in the **class organization** with the name format `git-exercise-{last name}-{first name}` such that it is accessible through `https://github.com/SE4Sci-S2024/git-exercise-{last name}-{first name}`. This new repository will be called the **solution repository**. The original repository `https://github.com/SE4Sci-S2024/git-exercise` will be called the **assignment repository**.
 2. Clone the assignment repository to your local machine and make sure you properly get all of the branches. This can be done by using the command `git checkout {branch_name}` after cloning.
 3. Using `git remote rename`, rename the `origin` remote pointing to the assignment repository url in your local folder to `upstream`.
 4. Using `git remote add origin`, add your private repository url as the new `origin` remote and make sure that all local branches are pointing to the new origin as their upstreams.
@@ -182,7 +182,7 @@ Using all of the commands that you have seen in class and in this assignment, yo
 
 ```
                  /----- J -----\
-A - B - C ----- G ----- H - I - K - L - M - N - O - P - Q - R - S - T
+A - B - C ----- G ----- H - I - K - L - M - N - O - P - Q - R - S - T - U
          \- D - E - F -/
 ```
 
@@ -201,23 +201,25 @@ The details of each commits are as follow:
 | J (cpp) | Add source.cpp | `source.cpp` |
 | K | Merge branch 'cpp' into main | - |
 | L | Rewrite README.md; add LICENSE | `README.md`, `LICENSE` |
+| M | Small edit to README.md | `README.md` |
 
-Your answers from part 1 will be in the commit M while the answers from part 2 will be in commit N to Q. The last three commits will be coming from your answer to part 3. Your goal is to modify the commit history to be in this form:
+Your answers from part 1 will be in the commit N while the answers from part 2 will be in commit O to R. The last three commits will be coming from your answer to part 3. Your goal is to modify the commit history to be in this form:
 
 ```
- /- J
-1 - 3 - 4 - M - 5 - 6
- \- 2 - F
+     /- J
+0 - 1 - 3 - 4 - M - 5 - 6
+     \- 2 - F
 ```
 
 | Commit | Message | Commit source or equivalence |
 | :- | :- | :- |
-| 1 | Initial commit | A, B, C |
+| 0 | Initial commit | A |
+| 1 | Add miscellaneous files | B, C |
 | 2 | Add source.py | D, E |
 | 3 | Add source.py and reset.sh | G, H |
-| 4 | Add source.cpp, edit information.txt README.md | I, K, L |
-| 5 | Answers from part 2 | N, O, P, Q |
-| 6 | Answers from part 3 | R, S, T |
+| 4 | Add source.cpp, edit information.txt README.md | I, K, L, M |
+| 5 | Answers from part 2 | O, P, Q, R |
+| 6 | Answers from part 3 | S, T, U |
 
 While it is possible to use `git cherry-pick` to simplify some of your task, make sure that each intermediate commits satisfy the prescribed requirements or you will lose some points.
 
